@@ -1,0 +1,31 @@
+<!--pages/address/index.wxml-->
+<view class="container" style="height: {{mainHeight}}px;">
+  <scroll-view class="address_page" scroll-y>
+    <block wx:for="{{ addressArr }}" wx:key="{{index}}">
+      <view class="address-item flex-row">
+        <view class="left">
+          <view class="flex-row" style="padding-bottom: 20rpx;">
+            <text>{{ item.contactsName }}</text>
+            <text style="padding: 0 50rpx 0 30rpx;">{{ item.contactsPhone }}</text>
+            <zan-tag type="primary" style="display: {{item.defaultFlag === '1' ? 'block' : 'none'}}">默认</zan-tag>
+          </view>
+          <view>
+            <text>{{ item.contactsAddr }}</text>
+          </view>
+        </view>
+        <view class="right">
+          <view style="font-size:24rpx;color: #B65150;" bindtap="delete" data-index="{{index}}">
+            删除
+          </view>
+          <view style="font-size:24rpx;" bindtap='edit' data-index="{{index}}">
+            编辑
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="add_address">
+    <zan-button bindbtnclick="addAddress" type="primary" style="width: 100%;height: 100%;">添加地址</zan-button>
+  </view>
+  <zan-dialog id="zan-dialog-delete"></zan-dialog>
+</view>

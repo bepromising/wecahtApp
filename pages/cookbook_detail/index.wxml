@@ -1,0 +1,12 @@
+<!--pages/product_detail/index.wxml-->
+<view class="container" style="position:relative;">
+  <view class="video">
+    <video  id="myVideo" src="{{cookbook.cookbookVideo}}" danmu-list="{{danmuList}}" ></video>
+  </view>
+  <view class="message">
+    <view class="title">{{cookbook.cookbookName}}</view>
+    <view class="content">
+      {{cookbook.cookbookDesc}}
+    </view>
+  </view>
+</view>

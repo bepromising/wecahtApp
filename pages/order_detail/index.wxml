@@ -1,0 +1,81 @@
+<!--pages/order_detail/index.wxml-->
+<view class="container ordeer-detail-page" style="height: {{mainHeight}}px;">
+  <view class="order_status" style="background-color: {{status_style.color}};">
+    <text class="zan-icon zan-icon-{{status_style.icon}}">  {{order.orderType}}</text>
+  </view>
+  <view class="address flex-row">
+    <view class="address_msg">
+      <view class="flex-row">
+        <text style="padding-right: 30rpx;">收货人:  {{order.contactsName}}</text>
+        <text>电话:  {{order.contactsPhone}}</text>
+      </view>
+      <view class="zan-ellipsis--l2">地址: {{order.contactsAddr}}</view>
+    </view>
+  </view>
+  <view style="width: 100%;padding-bottom: 130rpx;">
+
+    <block wx:for="{{order.orderGoodsList}}" wx:key="{{index}}">
+      <view class="product">
+        <view class="product-box flex-col">
+
+          <view class="flex-row">
+            <view>
+              <image class="img" src="{{item.goodsThum}}"></image>
+            </view>
+            <view>
+              <text class="title zan-ellipsis--l2">{{item.goodsName}}</text>
+            </view>
+          </view>
+
+          <view class="order-box">
+            <view class="order_msg flex-row">
+              <text class="msg_name">单价</text>
+              <text>￥{{item.goodsPrice}}</text>
+            </view>
+            <view class="order_msg flex-row">
+              <text class="msg_name">数量</text>
+              <text>x{{item.goodsNum}}</text>
+            </view>
+            <!-- <view class="order_total flex-row">
+              <text class="msg_name">总价</text>
+              <text>￥{{(item.goodsPrice * item.goodsNum).toFixed(2)}}</text>
+            </view> -->
+          </view>
+
+        </view>
+      </view>
+    </block>
+
+    <view style="padding: 0 40rpx;">
+      <view class="order_msg flex-row">
+        <text class="msg_name">订单号</text>
+        <text>{{order.orderId}}</text>
+      </view>
+      <view class="order_msg flex-row">
+        <text class="msg_name">创建时间</text>
+        <text>{{order.createDt}}</text>
+      </view>
+      <view class="order_msg flex-row" style="display: {{order.orderState === '0' ? 'none' : 'flex'}}">
+        <text class="msg_name">付款时间</text>
+        <text>{{order.payDt}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="pay_box flex-row" wx:if="{{order.orderState !== '99'}}">
+    <view style="color: #d32d2d;font-size: 40rpx;line-height:96rpx;padding-left: 20rpx;">
+      合计:
+    </view>
+    <view class="flex-row">
+      <view class="total flex-row">
+        <!-- <text style="color: #B6AA27;font-size: 22rpx;padding-right:10rpx;">(优惠:  9折)</text> -->
+        <view>
+          ￥{{totalPrice}}
+        </view>
+      </view>
+      <button class="btn" wx:if="{{order.orderState === '0'}}" bindtap="pay">结账</button>
+      <button class="btn" wx:if="{{order.orderState === '4'}}" bindtap="comment">评价</button>
+    </view>
+  </view>
+
+</view>

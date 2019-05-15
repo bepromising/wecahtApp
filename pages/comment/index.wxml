@@ -1,0 +1,16 @@
+<!--pages/suggest/index.wxml-->
+<view class="container" style="position: relative;padding-bottom: 80rpx;">
+  <view wx:if="{{list.length !== 0}}" wx:for="{{list}}" wx:key="{{index}}" style="width: 100%;box-sizing: border-box;padding: 0 20rpx;">
+    <view class="flex-col {{ item.commentType === '0' ? '' : 'flex-end' }}" style="width: 100%;padding-bottom:20rpx;">
+      <view class="time">{{item.createDt}}</view>
+      <view class="neirong flex-row {{ item.commentType !== '0' ? '' : 'flex-end' }}">{{item.commentContent}}</view>
+    </view>
+  </view>
+  <view class="box">
+    <textarea placeholder="请输入你要反馈的意见(200字内)" value="{{comment.commentContent}}" maxlength="200" auto-height bindinput="change"></textarea>
+    <text class="flex-row" style="font-size:32rpx;color: #ccc;justify-content:flex-end;padding: 20rpx 20rpx 0 0;">{{num}}/200</text>
+    <view class="save">
+      <button bindtap='save'>提交</button>
+    </view>
+  </view>
+</view>

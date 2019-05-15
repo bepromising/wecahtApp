@@ -1,0 +1,6 @@
+/* pages/noRole/index.wxss */
+
+.content {
+  color: #1a3256;
+  font-size: 48rpx;
+}

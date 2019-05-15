@@ -1,0 +1,51 @@
+<!--pages/shoppingcar/index.wxml-->
+<view class="container" style="height: {{mainHeight}}px;">
+  <block wx:if="{{hasProducts}}">
+    <view style="width:100%;min-height:100%;background-color: #f4f5f5;box-sizing:border-box;padding: 20rpx 20rpx 100rpx 20rpx;position:relative;">
+      <view class="flex-row card" wx:for="{{products}}" wx:key="{{index}}">
+        <view class="icon flex-row flex-center" catchtap='checked' data-index="{{index}}">
+          <zan-icon type="{{ item.checked? 'checked' : 'check'}}" style="color: #d32d2d"></zan-icon>
+        </view>
+        <view style="width: 90%;height: 100%;" class="flex-row">
+          <view>
+            <image src="{{ item.goodsInfo.fileInfoList[0].fileAccessUrl }}" class="card_img" />
+          </view>
+          <view class="flex-col product_msg">
+            <view class="item-name zan-ellipsis zan-c-gray-darker">{{ item.goodsInfo.goodsName }}</view>
+            <view class="flex-row" style="height:54rpx;width:100%;padding: 14rpx 0;justify-content:flex-end;">
+              <view class="jian flex-row flex-center" catchtap='subtract' hover-class="hover_num" data-index="{{index}}">—</view>
+              <view class="num flex-row flex-center">{{ item.goodsCount }}</view>
+              <view class="jia" catchtap="add" hover-class="hover_num" data-index="{{index}}">+</view>
+            </view>
+            <view class="flex-row">
+              <view style="font-size: 28rpx;width: 50%;">单位：{{item.goodsInfo.goodsUnit}}</view>
+              <view class="flex-row" style='justify-content:flex-end;width: 50%;'>
+                <view class="icon-money">￥</view>
+                <view class="price">{{ item.goodsInfo.goodsPrice * item.goodsCount}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="controls">
+        <view class="container flex-row">
+          <view class="icon flex-row flex-center" catchtap='checkedAll'>
+            <zan-icon type="{{ checkedAll ? 'checked' : 'check'}}" style="color: #d32d2d;padding: 0 20rpx 0 40rpx;"></zan-icon>全选
+          </view>
+          <view class="controls-btn flex-row">
+            <view class="zan-icon zan-icon-delete" style="padding: 14rpx 30rpx;color: #d32d2d;font-size: 40rpx;" catchtap='delete'></view>
+            <button style="height: 100%;background-color:#d32d2d;border-radius: 0;color: #ffffff;width: 222rpx;line-height:96rpx;font-size: 36rpx;" bindtap="tocheckedOrder">下单</button>
+          </view>
+        </view>
+      </view>
+      <zan-dialog id="zan-dialog-delete"></zan-dialog>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="flex-col flex-center" style="width:100%;height: 100%;">
+      <view class="zan-icon zan-icon-shopping-cart" style="color:#ccc;font-size:118rpx;"></view>
+      <view style="color:#ccc;padding: 20rpx 0;">购物车空空如也！</view>
+      <zan-button type="primary" bindbtnclick="goToIndex">去首页逛下吧</zan-button>
+    </view>
+  </block>
+</view>

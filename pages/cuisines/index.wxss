@@ -1,0 +1,50 @@
+/* pages/cuisines/index.wxss */
+/* pages/categories/index.wxss */
+
+.search {
+  background-color: #efeff1;
+  height: 104rpx;
+}
+
+#left_scroll {
+  width: 26%;
+  background-color: #f4f5f5;
+  color: #6e6b6b;
+}
+
+#right_scroll {
+  width: 74%;
+  box-sizing: border-box;
+  justify-content: space-around;
+  padding: 30rpx 0;
+}
+
+.left-item {
+  text-align: center;
+  font-size: 30rpx;
+  padding: 28rpx 0;
+}
+
+.left-item-active {
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 28rpx 0;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+}
+
+.product-item {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 4%;
+  height: 268rpx;
+  border: 1rpx solid #F7F7FA;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0px 0px 20rpx 2rpx #f0efef;
+  overflow: hidden;
+}

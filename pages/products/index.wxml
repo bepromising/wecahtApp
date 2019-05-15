@@ -1,0 +1,55 @@
+<!--pages/products/index.wxml-->
+<view class="container">
+  <view class="search">
+      <zan-search
+        placeholder="搜索商品"
+        bindsearch="search"
+        searchStyle="padding:20rpx;"
+        inputStyle="border-radius: 12rpx;text-align:center;"
+      />
+  </view>
+
+  <view class="products_list" wx:if="{{products_list.length > 0}}">
+    <view class="item" wx:for="{{products_list}}" wx:key="index" catchtap="toProductDetail" data-goodindex="{{index}}">
+      <image src="{{item.fileInfoList[0].fileAccessUrl}}" mode="aspectFill" class="item-img" />
+      <view class="item-name zan-ellipsis zan-c-gray-darker">{{item.goodsName}}</view>
+      <view class="flex-row">
+        <view class="icon-money">￥</view>
+        <view class="price">{{item.goodsPrice}}</view>
+        <view class="icon-money" style="padding-left:0;">/{{item.goodsUnit}}</view>
+      </view>
+      <view style="position:relative;">
+        <view class="zan-c-gray-dark" style="font-size:24rpx;padding-left:28rpx;">{{item.saleCount}}人付款</view>
+        <view class="zan-icon zan-icon-shopping-cart icon-cart" catchtap='addShoppingCar' data-index="{{index}}"></view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="noData flex-row flex-center">暂无数据</view>
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{shoppingModal.show}}"></view>
+  <view animation="{{shoppingModal.animationData}}" class="commodity_attr_box" wx:if="{{shoppingModal.show}}">
+    <view class="flex-row">
+      <view style="padding-right: 20rpx;width:30%;">
+        <image class="modal-img" src="{{shoppingModal.product.img}}" />
+      </view>
+      <view class="flex-col" style="width:70%;">
+        <view style="height: 80rpx;">
+          <text class="modal-title">{{shoppingModal.product.title}}</text>
+        </view>
+        <view class="flex-row" style="justify-content: space-between;color:#ccc;padding-top: 20rpx;">
+          <text style="font-size:32rpx;">库存： {{shoppingModal.product.kucun}}</text>
+          <text style="color:#d32d2d;font-size: 42rpx;">￥{{shoppingModal.product.price}}/{{shoppingModal.product.goodsUnit}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="flex-row" style="height:54rpx;width:100%;padding: 14rpx 0;justify-content:flex-end;">
+      <view class="jian flex-row flex-center" catchtap='subtract' hover-class="hover_num" data-index="{{index}}">—</view>
+      <view class="num flex-row flex-center">{{ shoppingModal.num }}</view>
+      <view class="jia" catchtap="add" hover-class="hover_num" data-index="{{index}}">+</view>
+    </view>
+    <view class="flex-row" style="justify-content: flex-end;height: 96rpx;box-sizing: border-box;">
+      <button class="btn" style="background-color: #e2bb39;" catchtap="saveCart">加入购物车</button>
+      <button class="btn" style="background-color: #d32d2d;" bindtap="tocheckedOrder">下单</button>
+    </view>
+  </view>
+</view>

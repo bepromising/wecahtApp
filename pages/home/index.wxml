@@ -1,0 +1,47 @@
+<!--pages/home/index.wxml-->
+<view class="container" style="position: relative;">
+  <view class="flex-col flex-center top">
+    <view class="avatar">
+      <image src="{{ userInfo.avatarUrl || '../../assets/mine-1.png' }}" mode="aspectFill" />
+    </view>
+    <view class="name">
+      <text>{{ userInfo.nickName }}</text>
+      <view style="text-align:center;" wx:if="{{userLevelValue}}">
+        <text class="userLevel">{{userLevelValue}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="flex-col flex-center" wx:if="{{!hasUserInfo}}">
+    <view style="padding-top: 200rpx;">请先授权，才显示功能</view>
+    <button class="btn" open-type='getUserInfo' bindgetuserinfo="getUserInfo">授权</button>
+  </view>
+  <view wx:else class="flex-row admin_fun" style="margin-top: 30rpx;">
+    <view class="flex-col fun_item flex-center;" bindtap='goTo' data-action="toOrders">
+      <image src="../../assets/orders.png" />
+      <text class="fun_name">订单管理</text>
+    </view>
+    <view class="flex-col fun_item flex-center;" bindtap='goTo' data-action="toLocations">
+      <image src="../../assets/location.png" />
+      <text class="fun_name">收货地址</text>
+    </view>
+    <view class="flex-col fun_item flex-center;" bindtap='goTo' data-action="toFoodBook">
+      <image src="../../assets/food-2.png" />
+      <text class="fun_name">菜谱</text>
+    </view>
+    <view class="admin_fun flex-row" wx:if="{{userType === '1'}}">
+      <view class="flex-col fun_item flex-center;" bindtap='goTo' data-action="toUserOrders">
+        <image src="../../assets/orders.png" />
+        <text class="fun_name">客户订单处理</text>
+      </view>
+      <!-- <view class="flex-col fun_item flex-center;" bindtap='goTo' data-action="toFeebBack">
+        <image src="../../assets/suggest.png" />
+        <text class="fun_name">评价反馈</text>
+      </view> -->
+    </view>
+  </view>
+  <view class="contract">
+    <button  open-type="contact" class="flex-row flex-center" style='padding: 0;background-color:#ec7474;width:100%;height:100%;'>
+      <image src="../../assets/contract2.png" />  
+    </button>
+  </view>
+</view>

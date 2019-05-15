@@ -1,0 +1,32 @@
+/* pages/cookbook_detail/index.wxss */
+.video { 
+  width: 100%;
+  height: 700rpx;
+}
+
+.message {
+  padding: 0 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #F7F7FA;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  text-indent: 2em;
+}
+
+.content {
+  margin-top: 20rpx;
+  color: #666;
+  font-size: 30rpx;
+  text-indent: 2em;
+}
+
+#myVideo {
+  width:100%;
+  height:100%;
+}

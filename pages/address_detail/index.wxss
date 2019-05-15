@@ -1,0 +1,28 @@
+/* pages/address_detail/index.wxss */
+
+#form {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.form-item {
+  width: 100%;
+  font-size: 32rpx;
+  padding: 18rpx 0;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.title {
+  text-align: center;
+  width:35%;
+}
+
+.field {
+  width: 58%;
+}
+
+.bottom-line {
+  border-bottom: 1rpx solid #e0dcdc;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "zan-search": "../../zanUI/search/index"
+  },
+  "navigationBarTitleText": "商品类别",
+  "enablePullDownRefresh": true
+}

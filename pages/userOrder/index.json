@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "客户订单管理",
+  "usingComponents": {
+    "zan-dialog": "../../zanUI/dialog/index"
+  },
+  "enablePullDownRefresh": true
+}

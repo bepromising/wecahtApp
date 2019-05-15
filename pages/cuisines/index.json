@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zan-search": "../../zanUI/search/index"
+  },
+  "navigationBarTitleText": "菜式搭配"
+}

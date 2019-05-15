@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "zan-search": "../../zanUI/search/index",
+    "zan-icon": "../../zanUI/icon/index"
+  },
+  "navigationBarTitleText": "商品",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "zan-button": "../../zanUI/btn/index",
+    "zan-checkbox": "../../zanUI/checkbox/index",
+    "zan-icon": "../../zanUI/icon/index",
+    "zan-dialog": "../../zanUI/dialog/index"
+  },
+  "navigationBarTitleText": "购物车",
+  "enablePullDownRefresh": true
+}

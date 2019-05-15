@@ -1,0 +1,47 @@
+<!--pages/address_detail/index.wxml-->
+<view class="container">
+  <view id="form">
+    <view class="form-item bottom-line flex-row" >
+      <view class="title">姓名</view>
+      <view class="field">
+        <input type="text" placeholder="请输入姓名" maxlength="10" value="{{contacts.contactsName}}" bindblur="changeName"/>
+      </view>
+    </view>
+    <view class="form-item bottom-line flex-row">
+      <view class="title">手机号码</view>
+      <view class="field">
+        <input type="number" placeholder="请输入手机号码" maxlength="11" value="{{contacts.contactsPhone}}" bindblur="changePhone"/>
+      </view>
+    </view>
+    <!-- <view class="form-item bottom-line flex-row" style="width： 65%;">
+      <view class="title">详细地址</view>
+      <view class="location zan-ellipsis" style="font-size:32rpx;" bindtap="chooseLocation">
+        <view class="zan-icon zan-icon-location" style="color:#e94f4f;"></view>
+        {{contacts.contactsAddr}}
+      </view>
+    </view> -->
+    <view class="form-item bottom-line flex-row" style="height: 190rpx;width： 65%;">
+      <view class="title">详细地址</view>
+      <view class="field flex-row">
+        <textarea style="flex:1;height:auto;" value="{{contacts.contactsAddr}}" bindblur="changeAddress" />
+        <view class="zan-icon zan-icon-location" style="color:#e94f4f;" bindtap="chooseLocation"></view>
+      </view>
+    </view>
+    <view class="form-item flex-row" style="height:60rpx;line-height:60rpx;">
+      <view class="title">默认地址</view>
+      <view class="field" style="position:relative;">
+        <switch style="position:absolute;right:10rpx;top: 0;" checked="{{isDefault}}" bindchange="changeSwitch"/>
+      </view>
+    </view>
+    <view style="padding-top: 40rpx;" wx:if="{{!isEdit}}">
+      <zan-button bindbtnclick="save" type="primary" style="width: 100%;">完成并保存</zan-button>
+    </view>
+    <view style="padding-top: 40rpx;" wx:else>
+      <zan-button bindbtnclick="update" type="primary" style="width: 100%;">保存修改</zan-button>
+    </view>
+    <view class="flex-row flex-center" style="padding-top: 40rpx;color:#666;">
+      请点击红色位置坐标来选择地址！！
+    </view>
+  </view>
+  <zan-toast id="zan-toast-save"></zan-toast>
+</view>

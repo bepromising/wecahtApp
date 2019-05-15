@@ -1,0 +1,197 @@
+/**index.wxss**/
+
+.searchBox {
+  background-color: #efeff1;
+}
+
+.searchBox > .location {
+  width:25%;
+  line-height: 104rpx;
+}
+
+.searchBox > .search {
+  width:100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 380rpx;
+  background-color: #F7F7FA;
+  padding-bottom: 20rpx;
+}
+
+.swiper2 {
+  width: 100%;
+  height: 180rpx;
+  background-color: #F7F7FA;
+  padding-bottom: 20rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 380rpx;
+}
+
+.kindsImg {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.kindsGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.kind {
+  width: 25%;
+  height: 160rpx;
+  box-sizing: border-box;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.products > .item {
+  width: 45%;
+  height: 462rpx;
+  border: 1rpx solid #F7F7FA;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0px 0px 20rpx 2rpx #F7F7FA;
+}
+
+.products > .item > .item-img {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.item-name {
+  font-size: 32rpx;
+  padding-left: 14rpx;
+}
+
+.icon-money {
+  padding-top: 14rpx;
+  padding-left: 14rpx;
+  font-size: 30rpx;
+  color: #d32d2d;
+}
+
+.price {
+  color: #d32d2d;
+  font-size: 42rpx;
+}
+
+.icon-cart {
+  position:absolute;
+  font-size: 40rpx;
+  bottom: 0;
+  right: 28rpx;
+  color: #e94f4f;
+}
+
+/*使屏幕变暗 */
+.commodity_screen {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ background: #000;
+ opacity: 0.2;
+ overflow: hidden;
+ z-index: 1000;
+ color: #fff;
+}
+/*对话框 */
+.commodity_attr_box {
+ height: 368rpx;
+ width: 100%;
+ overflow: hidden;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ z-index: 2000;
+ background: #fff;
+ padding: 20rpx 20rpx 0 20rpx;
+ box-sizing: border-box;
+}
+
+.modal-img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.modal-title {
+  font-size: 30rpx;
+  color: #686060;
+  height: 100%;
+}
+
+.jian{
+  width: 54rpx;
+  border: 1rpx solid #ccc;
+  color: #ccc;
+  font-size: 27rpx;
+  border-radius: 12rpx 0 0 12rpx;
+}
+
+.jia{
+  border-radius: 0 12rpx 12rpx 0;
+  font-size: 60rpx;
+  width: 54rpx;
+  text-align: center; 
+  line-height: 45rpx;
+  border: 1rpx solid #ccc;
+  color: #ccc;
+  font-weight: 200;
+}
+
+.hover_num {
+  color: #d32d2d;
+  border: 1rpx solid #d32d2d;
+}
+
+.num {
+  color: #928d8d;
+  width: 54rpx;
+  text-align: center;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.btn {
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  border: 0;
+  font-size: 36rpx;
+  color: #fff;
+  box-sizing: border-box；
+}
+
+.contract {
+  width: 70rpx;
+  height: 70rpx;
+  position: fixed;
+  right: 26rpx;
+  bottom: 64rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 20;
+  background-color: #ec7474;
+  border: 0;
+  
+}
+
+.contract  image {
+  width: 50rpx;
+  height: 50rpx;
+}

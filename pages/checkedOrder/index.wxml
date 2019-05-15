@@ -1,0 +1,54 @@
+<!--pages/checkedOrder/index.wxml-->
+<view class="container" style="height: {{mainHeight}}px;">
+  <view class="product_list">
+    <block wx:for="{{form.orderGoodsList}}" wx:key="index">
+      <view class="item flex-row">
+        <view class="img">
+          <image src="{{item.goodsThum}}" alt="图片"/>
+        </view>
+        <view style="flex: 1;padding: 0 20rpx;" class="flex-col">
+          <view class="name">{{item.goodsName}}</view>
+          <view class="flex-row" style="flex:1;align-items: flex-end;">
+            <view class="price" style="flex: 1;">¥ {{item.goodsPrice}}</view>
+            <view class="num">X {{item.goodsNum}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <block wx:if="{{!form.contactsAddr}}">
+  <view class="address flex-row" bindtap="toSelectAddr">
+    <view class="title" style="flex: 1;">地址</view>
+    <view style="font-size: 40rpx;color:#666;">></view>
+  </view>
+  </block>
+  <block wx:else>
+    <view class="address_detail" bindtap="toSelectAddr">
+      <view class="address_detail_info">
+        <text style="padding-right: 40rpx;">{{form.contactsName}}</text>  {{form.contactsPhone}}
+      </view>
+      <view class="address_detail_info">{{form.contactsAddr}}</view>
+    </view>
+  </block>
+  <!-- <view class="flex-row remark" >
+    <view class="title" style="padding-right:40rpx;">客户留言</view>
+    <view style="line-height: 80rpx;">
+      <input placeholder=""  value="{{form.userRemark}}" bindblur="changeUserRemark"/>
+    </view>
+  </view> -->
+
+  <view class="pay_box flex-row">
+    <view style="color: #d32d2d;font-size: 40rpx;line-height:96rpx;padding-left: 20rpx;">
+      合计:
+    </view>
+    <view class="flex-row">
+      <view class="total flex-row">
+        <view>
+          ￥{{totalPrice}}
+        </view>
+      </view>
+      <button class="btn" bindtap="placeOrder">提交订单</button>
+    </view>
+  </view>
+  <zan-toast id="zan-toast-noAddr"></zan-toast>
+</view>

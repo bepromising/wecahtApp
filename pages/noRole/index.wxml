@@ -1,0 +1,7 @@
+<!--pages/noRole/index.wxml-->
+<view class="container flex-row flex-center">
+  <view class="flex-col flex-center">
+    <view class="content" style="padding-top: 200rpx;">功能还在完善中</view>
+    <view class="content" style="padding-top: 20rpx;">敬请期待！</view>
+  </view>
+</view>

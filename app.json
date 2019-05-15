@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/categories/index",
+    "pages/shoppingcar/index",
+    "pages/home/index",
+    "pages/address/index",
+    "pages/address_detail/index",
+    "pages/orders/index",
+    "pages/order_detail/index",
+    "pages/products/index",
+    "pages/product_detail/index",
+    "pages/comment/index",
+    "pages/cuisines/index",
+    "pages/noRole/index",
+    "zanUI/toast/index",
+    "pages/checkedOrder/index",
+    "pages/selectAddress/index",
+    "pages/userOrder/index",
+    "pages/foodBook/index",
+    "pages/cookbook_detail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "美食家全民采购配送平台"
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "debug": false,
+  "tabBar": {
+    "selectedColor": "#ec7474",
+    "color": "#b4b4b4",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "assets/poke-1.png",
+        "selectedIconPath": "assets/poke-2.png"
+      },
+      {
+        "pagePath": "pages/categories/index",
+        "text": "分类",
+        "iconPath": "assets/category-1.png",
+        "selectedIconPath": "assets/category-2.png"
+      },
+      {
+        "pagePath": "pages/cuisines/index",
+        "text": "菜式",
+        "iconPath": "assets/food-1.png",
+        "selectedIconPath": "assets/food-2.png"
+      },
+      {
+        "pagePath": "pages/shoppingcar/index",
+        "text": "购物车",
+        "iconPath": "assets/shoppingcar-1.png",
+        "selectedIconPath": "assets/shoppingcar-2.png"
+      },
+      {
+        "pagePath": "pages/home/index",
+        "text": "我的",
+        "iconPath": "assets/mine-1.png",
+        "selectedIconPath": "assets/mine-2.png"
+      }
+    ]
+  }
+}

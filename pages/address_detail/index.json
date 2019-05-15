@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "zan-button": "../../zanUI/btn/index",
+    "zan-toast": "../../zanUI/toast/index"
+  },
+  "navigationBarTitleText": "收货地址"
+}

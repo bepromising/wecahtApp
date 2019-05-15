@@ -1,0 +1,23 @@
+<view class="flex-row searchBox">
+    <view class="search">
+      <zan-search
+        placeholder="搜索商品"
+        bindsearch="getAll"
+        searchStyle="padding:20rpx;"
+        inputStyle="border-radius: 12rpx;text-align:center;"
+      />
+    </view>
+  </view>
+  <view class="food_book">
+    <block wx:for="{{cookbooks}}" wx:key="index" >
+      <view class="item" catchtap="toDetail" data-index="{{index}}">
+        <view class="image">
+          <image src="{{item.cookbookImg}}" style="width:100%;height:100%;"/>
+        </view>
+        <view class="content">
+          <view class="title">{{item.cookbookName}}</view>
+          <view class="detail">{{item.cookbookDesc}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
